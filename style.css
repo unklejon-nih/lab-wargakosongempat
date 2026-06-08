@@ -104,12 +104,7 @@ font-size:1.2rem;
 }
 
 
-#homeIcon{
-font-size:5rem;
-margin-top:30px;
-cursor:pointer;
-animation:pulse 2s infinite;
-}
+
 
 @keyframes pulse{
 
@@ -140,9 +135,7 @@ font-size:2.5rem;
 letter-spacing:4px;
 }
 
-#homeIcon{
-font-size:3.5rem;
-}
+
 
 .hero-content h1{
 font-size:2.5rem;
@@ -159,3 +152,413 @@ object-position:center center;
 }
 
 }
+
+#bootScreen{
+position:fixed;
+inset:0;
+background:#0F172A;
+display:none;
+justify-content:center;
+align-items:center;
+overflow:hidden;
+z-index:9999;
+}
+
+.grid-bg{
+position:absolute;
+inset:0;
+background:
+linear-gradient(rgba(0,255,255,.08) 1px, transparent 1px),
+linear-gradient(90deg, rgba(0,255,255,.08) 1px, transparent 1px);
+background-size:40px 40px;
+transform:perspective(800px) rotateX(80deg);
+animation:gridMove 12s linear infinite;
+}
+
+@keyframes gridMove{
+from{
+background-position:0 0;
+}
+to{
+background-position:0 500px;
+}
+}
+
+.terminal{
+position:relative;
+z-index:10;
+width:min(800px,90%);
+font-family:monospace;
+color:#7fffd4;
+}
+
+#bootText{
+white-space:pre-line;
+font-size:1rem;
+line-height:1.8;
+}
+
+#continueText{
+margin-top:40px;
+text-align:center;
+font-size:1rem;
+letter-spacing:4px;
+animation:blink 1.2s infinite;
+display:none;
+}
+
+@keyframes blink{
+50%{
+opacity:.2;
+}
+}
+
+
+#text{
+font-size:5rem;
+font-weight:300;
+text-align:center;
+
+transition:
+opacity .15s ease,
+transform .15s ease,
+filter .15s ease;
+}
+
+.tron-home-grid{
+
+position:absolute;
+inset:0;
+
+background:
+linear-gradient(rgba(0,255,100,.08) 1px,transparent 1px),
+linear-gradient(90deg,rgba(0,255,100,.08) 1px,transparent 1px);
+
+background-size:50px 50px;
+
+animation:gridMove 8s linear infinite;
+
+}
+
+.home-content{
+
+position:relative;
+z-index:10;
+
+text-align:center;
+
+}
+
+.home-content h1{
+
+font-size:clamp(2rem,8vw,5rem);
+
+letter-spacing:8px;
+
+}
+
+.our-projects{
+
+position:fixed;
+
+bottom:18px;
+
+left:50%;
+
+transform:translateX(-50%);
+
+font-size:.7rem;
+
+letter-spacing:5px;
+
+text-decoration:none;
+
+color:#00ff88;
+
+opacity:.7;
+
+z-index:100;
+
+animation:neonPulse 2s infinite;
+
+}
+
+@keyframes neonPulse{
+
+0%{
+
+opacity:.25;
+
+text-shadow:
+0 0 2px #00ff88;
+
+}
+
+50%{
+
+opacity:1;
+
+text-shadow:
+0 0 5px #00ff88,
+0 0 10px #00ff88,
+0 0 20px #00ff88;
+
+}
+
+100%{
+
+opacity:.25;
+
+text-shadow:
+0 0 2px #00ff88;
+
+}
+
+}
+
+.our-projects:hover{
+
+opacity:1;
+
+text-shadow:
+0 0 8px #00ff88,
+0 0 25px #00ff88;
+
+}
+
+@media(max-width:768px){
+
+.our-projects{
+
+font-size:.6rem;
+
+letter-spacing:3px;
+
+bottom:12px;
+
+}
+
+}
+
+/* MEMORY STREAM */
+
+#memoryMode{
+position:fixed;
+inset:0;
+display:none;
+justify-content:center;
+align-items:center;
+background:black;
+overflow:hidden;
+z-index:99999;
+}
+
+#memoryImage{
+width:100%;
+height:100%;
+object-fit:cover;
+opacity:0;
+transform:scale(1.1);
+}
+
+.memoryOverlay{
+position:absolute;
+inset:0;
+background:
+linear-gradient(
+to bottom,
+rgba(0,0,0,.2),
+rgba(0,0,0,.6)
+);
+z-index:1;
+}
+
+#memoryCaption{
+position:absolute;
+bottom:8%;
+left:50%;
+transform:translateX(-50%);
+color:white;
+letter-spacing:4px;
+font-size:1.2rem;
+text-align:center;
+z-index:2;
+}
+
+/* FLASH */
+
+#flash{
+position:fixed;
+inset:0;
+background:white;
+opacity:0;
+pointer-events:none;
+z-index:999999;
+}
+
+@media (max-width:768px){
+
+#text{
+font-size:2rem;
+padding:20px;
+text-align:center;
+}
+
+#finalTitle{
+font-size:2.4rem;
+padding:20px;
+text-align:center;
+}
+
+#bootText{
+font-size:.9rem;
+line-height:1.7;
+padding:20px;
+}
+
+#continueText{
+font-size:.8rem;
+letter-spacing:2px;
+padding:20px;
+}
+
+#memoryCaption{
+font-size:1rem;
+width:90%;
+}
+
+.home-content h1{
+font-size:2rem;
+letter-spacing:4px;
+}
+
+.home-content p{
+font-size:.95rem;
+padding:0 20px;
+}
+
+.our-projects{
+font-size:1rem;
+}
+
+}
+
+#home{
+
+display:none;
+
+position:fixed;
+inset:0;
+
+background:#000;
+
+overflow:hidden;
+
+justify-content:center;
+align-items:center;
+
+}
+
+.tron-grid{
+
+position:absolute;
+inset:0;
+
+background:
+
+linear-gradient(
+rgba(0,255,100,.08) 1px,
+transparent 1px
+),
+
+linear-gradient(
+90deg,
+rgba(0,255,100,.08) 1px,
+transparent 1px
+);
+
+background-size:50px 50px;
+
+animation:gridMove 12s linear infinite;
+
+}
+
+.tron-traffic{
+
+position:absolute;
+inset:0;
+
+overflow:hidden;
+
+}
+
+.tron-traffic::before{
+
+content:"";
+
+position:absolute;
+
+width:2px;
+height:100%;
+
+left:20%;
+
+background:
+
+linear-gradient(
+transparent,
+#00ff88,
+transparent
+);
+
+animation:traffic1 4s linear infinite;
+
+}
+
+.tron-traffic::after{
+
+content:"";
+
+position:absolute;
+
+width:100%;
+height:2px;
+
+top:60%;
+
+background:
+
+linear-gradient(
+transparent,
+#00ff88,
+transparent
+);
+
+animation:traffic2 6s linear infinite;
+
+}
+
+@keyframes traffic1{
+
+from{
+transform:translateY(-100%);
+}
+
+to{
+transform:translateY(100%);
+}
+
+}
+
+@keyframes traffic2{
+
+from{
+transform:translateX(-100%);
+}
+
+to{
+transform:translateX(100%);
+}
+
+}
+
